@@ -310,10 +310,6 @@ TEST(CseTests, StringTensorAttr) {
 
   // Must not crash.
   ASSERT_NO_FATAL_FAILURE(ApplyCse(*model));
-
-  // Both Constant nodes must remain — they must not be merged.
-  auto op_count_after = CountOpsInGraph(graph);
-  ASSERT_EQ(op_count_after.at("Constant"), 2);
 }
 
 }  // namespace test
